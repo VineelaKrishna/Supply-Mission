@@ -81,13 +81,17 @@ function draw() {
 function keyPressed(){
 	if(keyCode === LEFT_ARROW){
 		helicopterSprite.x -= 10;
-		if(packageBody.height === 80)
-			packageBody.position.x  -= 10;
+		translation={x:-10,y:0}
+		console.log(packageBody.position.y);
+		if(packageBody.position.y === 200)
+			Body.translate(packageBody,translation);
 	}
 	if(keyCode === RIGHT_ARROW){
 		helicopterSprite.x += 10;
-		if(packageBody.height === 80)
-			packageBody.position.x  += 10;
+		translation={x:10,y:0}
+		console.log(packageBody.position.y);
+		if(packageBody.position.y === 200)
+			Body.translate(packageBody,translation);
 	}
 	if(keyCode === DOWN_ARROW){
 		Body.setStatic(packageBody,false);
